@@ -109,19 +109,19 @@ export default function StatusPage() {
                 <div key={inc.id} className="p-6 rounded-2xl bg-[#0B1220] border border-[#26364D] space-y-3">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono text-[#64748B]">{inc.date}</span>
+                      <span className="text-xs text-[#64748B]">{inc.date}</span>
                       <Badge variant="success" size="sm">
                         {inc.statusText}
                       </Badge>
                     </div>
-                    <span className="text-xs font-mono text-[#39C99A]">مدت رفع: {inc.resolutionTime}</span>
+                    <span className="text-xs text-[#39C99A]">مدت رفع: {inc.resolutionTime}</span>
                   </div>
 
                   <h3 className="text-base font-bold text-[#E6EDF7]">{inc.title}</h3>
                   <p className="text-xs text-[#A9B7CB] leading-[1.75]">{inc.description}</p>
 
-                  <div className="pt-3 border-t border-[#26364D]/60 flex flex-wrap items-center gap-4 text-xs font-mono text-[#64748B]">
-                    <span>بخش‌های تحت تاثیر: {inc.affected.join(', ')}</span>
+                  <div className="pt-3 border-t border-[#26364D]/60 flex flex-wrap items-center gap-4 text-xs text-[#64748B]">
+                    <span>بخش‌های تحت تاثیر: <span className="font-mono">{inc.affected.join(', ')}</span></span>
                     <span>•</span>
                     <span className="text-[#F5B84C]">اثر: {inc.impact}</span>
                   </div>

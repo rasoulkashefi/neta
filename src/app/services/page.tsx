@@ -114,7 +114,7 @@ export default function ServicesPage() {
           {/* Count summary */}
           <div className="flex items-center justify-between mb-6 text-xs text-[#A9B7CB]">
             <span>نمایش {filtered.length} سرویس اعتبارسنجی‌شده</span>
-            <span className="font-mono text-[#8B7CFF]">بروزرسانی زنده پروتکل‌ها</span>
+            <span className="text-xs font-bold text-[#8B7CFF]">بروزرسانی زنده پروتکل‌ها</span>
           </div>
 
           {/* Directory Grid */}

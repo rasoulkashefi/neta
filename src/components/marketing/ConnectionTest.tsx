@@ -220,7 +220,7 @@ export function ConnectionTest() {
             </div>
 
             <div className="mt-6 pt-4 border-t border-[#26364D]/60 flex items-center justify-between">
-              <span className="text-[11px] font-mono text-[#64748B]">پروتکل: UDP / DoH</span>
+              <span className="text-[11px] text-[#64748B]">پروتکل: <span className="font-mono">UDP / DoH</span></span>
               <Button
                 variant="outline"
                 size="sm"
@@ -258,9 +258,9 @@ export function ConnectionTest() {
                   <div key={svc.name} className="flex items-center justify-between text-xs py-1">
                     <span className="text-[#E6EDF7] font-medium">{svc.name}</span>
                     {svc.status === 'ok' ? (
-                      <span className="text-[#39C99A] flex items-center gap-1 font-mono">
+                      <span className="text-[#39C99A] flex items-center gap-1 font-medium">
                         <CheckCircle2 className="w-3.5 h-3.5" />
-                        <span>پاسخ 200 OK</span>
+                        <span>پاسخ <span className="font-mono">200 OK</span></span>
                       </span>
                     ) : (
                       <span className="text-[#64748B] flex items-center gap-1">
@@ -278,7 +278,7 @@ export function ConnectionTest() {
             </div>
 
             <div className="mt-6 pt-4 border-t border-[#26364D]/60 flex items-center justify-between">
-              <span className="text-[11px] font-mono text-[#64748B]">پروکسی لایه ۷</span>
+              <span className="text-[11px] text-[#64748B]">پروکسی لایه ۷</span>
               <Button
                 variant="outline"
                 size="sm"

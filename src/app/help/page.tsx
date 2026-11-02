@@ -105,7 +105,7 @@ export default function HelpCenterPage() {
                   <div>
                     <div className="flex items-center gap-2 mb-1.5">
                       <Badge variant="cyan" size="sm">{art.categoryLabel}</Badge>
-                      <span className="text-xs text-[#64748B] font-mono">{art.readTime}</span>
+                      <span className="text-xs text-[#64748B]">{art.readTime}</span>
                     </div>
                     <h3 className="text-base font-bold text-[#E6EDF7] group-hover:text-[#38D9F5] transition-colors">
                       {art.title}

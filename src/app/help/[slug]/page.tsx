@@ -33,7 +33,7 @@ export default async function HelpArticleDetailPage({
       <main className="flex-1 py-16 md:py-24">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs text-[#A9B7CB] mb-8 font-mono">
+          <div className="flex items-center gap-2 text-xs text-[#A9B7CB] mb-8 font-medium">
             <Link href="/" className="hover:text-[#38D9F5]">نتا</Link>
             <span>/</span>
             <Link href="/help" className="hover:text-[#38D9F5]">مرکز مستندات</Link>
@@ -44,7 +44,7 @@ export default async function HelpArticleDetailPage({
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <Badge variant="cyan" size="sm">{article.categoryLabel}</Badge>
-              <span className="text-xs text-[#64748B] flex items-center gap-1 font-mono">
+              <span className="text-xs text-[#64748B] flex items-center gap-1 font-medium">
                 <Clock className="w-3.5 h-3.5" />
                 <span>{article.readTime}</span>
               </span>

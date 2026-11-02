@@ -24,7 +24,7 @@ export default function AppGamingDashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Game list */}
         <div className="bg-[#121D30] border border-[#26364D] rounded-3xl p-6 space-y-2">
-          <h2 className="text-xs font-mono uppercase text-[#A9B7CB] mb-4">بازی‌های پشتیبانی‌شده:</h2>
+          <h2 className="text-xs font-bold text-[#A9B7CB] mb-4">بازی‌های پشتیبانی‌شده:</h2>
           {GAMES_DIRECTORY.map((game) => (
             <button
               key={game.id}
@@ -36,7 +36,7 @@ export default function AppGamingDashboardPage() {
               }`}
             >
               <span className="text-sm font-bold">{game.title}</span>
-              <span className="text-xs font-mono">{game.regions.length} ریجن</span>
+              <span className="text-xs font-bold text-[#A9B7CB]">{game.regions.length} ریجن</span>
             </button>
           ))}
         </div>

@@ -130,7 +130,7 @@ export function SetupWizardSection() {
           {currentStep === 1 && (
             <div className="space-y-6">
               <div>
-                <span className="text-xs font-mono text-[#38D9F5]">گام اول از پنج</span>
+                <span className="text-xs font-bold text-[#38D9F5]">گام اول از پنج</span>
                 <h3 className="text-xl font-bold text-[#E6EDF7] mt-1">هدف اصلی شما از اتصال چیست؟</h3>
                 <p className="text-xs text-[#A9B7CB]">نتا تنظیمات بهینه را بر اساس نیاز شما پیکربندی می‌کند.</p>
               </div>
@@ -176,7 +176,7 @@ export function SetupWizardSection() {
           {currentStep === 2 && (
             <div className="space-y-6">
               <div>
-                <span className="text-xs font-mono text-[#38D9F5]">گام دوم از پنج</span>
+                <span className="text-xs font-bold text-[#38D9F5]">گام دوم از پنج</span>
                 <h3 className="text-xl font-bold text-[#E6EDF7] mt-1">روی چه دستگاهی می‌خواهید تنظیم کنید؟</h3>
                 <p className="text-xs text-[#A9B7CB]">دستورالعمل‌ها دقیقاً مطابق با رابط سیستم‌عامل شما نمایش داده خواهند شد.</p>
               </div>
@@ -217,7 +217,7 @@ export function SetupWizardSection() {
           {currentStep === 3 && (
             <div className="space-y-6">
               <div>
-                <span className="text-xs font-mono text-[#38D9F5]">گام سوم از پنج</span>
+                <span className="text-xs font-bold text-[#38D9F5]">گام سوم از پنج</span>
                 <h3 className="text-xl font-bold text-[#E6EDF7] mt-1">تایید سازگاری {guide.title}</h3>
                 <p className="text-xs text-[#A9B7CB]">سیستم‌عامل و پروتکل‌های پشتیبانی‌شده به شرح زیر است:</p>
               </div>
@@ -253,7 +253,7 @@ export function SetupWizardSection() {
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <span className="text-xs font-mono text-[#38D9F5]">گام چهارم از پنج</span>
+                  <span className="text-xs font-bold text-[#38D9F5]">گام چهارم از پنج</span>
                   <h3 className="text-xl font-bold text-[#E6EDF7] mt-1">مراحل تنظیم روی {guide.title}</h3>
                 </div>
                 <Badge variant="neutral" size="sm">{guide.estimatedTime}</Badge>
@@ -320,7 +320,7 @@ export function SetupWizardSection() {
           {currentStep === 5 && (
             <div className="space-y-6 text-center">
               <div>
-                <span className="text-xs font-mono text-[#38D9F5]">گام پنجم و پایانی</span>
+                <span className="text-xs font-bold text-[#38D9F5]">گام پنجم و پایانی</span>
                 <h3 className="text-2xl font-black text-[#E6EDF7] mt-1">تست اتصال و اتمام راه‌اندازی</h3>
                 <p className="text-xs text-[#A9B7CB] mt-1">
                   پس از ذخیره تغییرات در دستگاه، دکمه زیر را بزنید تا فعال بودن مسیر نتا تایید گردد.

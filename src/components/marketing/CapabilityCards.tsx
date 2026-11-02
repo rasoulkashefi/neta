@@ -63,7 +63,7 @@ export function CapabilityCards() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center text-xs font-mono text-[#38D9F5] tracking-widest uppercase mb-3">
+          <div className="inline-flex items-center text-xs font-bold text-[#38D9F5] mb-3">
             یک معماری هماهنگ • سه قابلیت کلیدی
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#E6EDF7] tracking-tight leading-[1.32]">

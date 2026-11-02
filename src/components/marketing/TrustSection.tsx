@@ -114,7 +114,7 @@ export function TrustSection() {
         {/* Live Node Status Snippet */}
         <div className="bg-[#121D30] border border-[#26364D] rounded-2xl p-5 md:p-6">
           <div className="flex items-center justify-between mb-4">
-            <h4 className="text-xs font-mono uppercase text-[#A9B7CB] tracking-wider">
+            <h4 className="text-xs font-bold text-[#A9B7CB]">
               وضعیت فعلی نودهای عملیاتی Anycast:
             </h4>
             <span className="text-[11px] text-[#39C99A] font-mono">Uptime: 99.94%</span>

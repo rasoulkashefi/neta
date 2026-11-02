@@ -65,13 +65,13 @@ export default function AppDashboardOverview() {
 
         <div className="p-5 rounded-2xl bg-[#121D30] border border-[#26364D]">
           <span className="text-xs text-[#A9B7CB] block mb-1">سرویس‌های مجاز فعال:</span>
-          <div className="font-mono text-2xl font-bold text-[#8B7CFF]">28 سرویس</div>
+          <div className="text-2xl font-bold text-[#8B7CFF]"><span className="font-mono tabular-nums">28</span> سرویس</div>
           <span className="text-[10px] text-[#8B7CFF] mt-1 block">Claude, Docker, Figma...</span>
         </div>
 
         <div className="p-5 rounded-2xl bg-[#121D30] border border-[#26364D]">
           <span className="text-xs text-[#A9B7CB] block mb-1">دستگاه‌های آنلاین:</span>
-          <div className="font-mono text-2xl font-bold text-[#F5A65B]">۲ دستگاه</div>
+          <div className="text-2xl font-bold text-[#F5A65B]">۲ دستگاه</div>
           <span className="text-[10px] text-[#A9B7CB] mt-1 block">ویندوز و اندروید</span>
         </div>
       </div>

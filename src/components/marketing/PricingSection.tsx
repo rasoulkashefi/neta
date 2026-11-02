@@ -49,7 +49,7 @@ export function PricingSection() {
               }`}
             >
               <span>پرداخت سالانه</span>
-              <span className="text-[10px] font-mono bg-[#38D9F5]/20 text-[#38D9F5] px-1.5 py-0.5 rounded-full">
+              <span className="text-xs font-bold bg-[#38D9F5]/20 text-[#38D9F5] px-2 py-0.5 rounded-full">
                 ۲۰٪ صرفه‌جویی
               </span>
             </button>
@@ -75,7 +75,7 @@ export function PricingSection() {
                 <div>
                   {/* Top Badge */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-bold text-[#E6EDF7]">{plan.name}</span>
+                    <span className="text-base font-bold text-[#E6EDF7]">{plan.name}</span>
                     {plan.badge && (
                       <Badge
                         variant={isPersonal ? 'cyan' : isGaming ? 'amber' : 'neutral'}
@@ -87,13 +87,16 @@ export function PricingSection() {
                   </div>
 
                   {/* Price */}
-                  <div className="mb-4">
-                    <div className="flex items-baseline gap-1">
-                      <span className="font-mono text-3xl sm:text-4xl font-black text-[#E6EDF7]">
+                  <div className="mb-6">
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-3xl sm:text-4xl font-black text-[#E6EDF7] tracking-tight">
                         {price}
                       </span>
                       {plan.id !== 'starter' && (
-                        <span className="text-xs text-[#A9B7CB]">/ ماهانه</span>
+                        <span className="text-sm font-semibold text-[#A9B7CB]">تومان</span>
+                      )}
+                      {plan.id !== 'starter' && (
+                        <span className="text-xs text-[#64748B]">/ ماهانه</span>
                       )}
                     </div>
                     <p className="text-xs text-[#A9B7CB] mt-2 leading-[1.6]">
@@ -103,7 +106,7 @@ export function PricingSection() {
 
                   {/* Features List */}
                   <div className="pt-6 border-t border-[#26364D]/70 space-y-3 mb-6">
-                    <div className="text-xs font-mono uppercase text-[#A9B7CB] tracking-wider mb-2">
+                    <div className="text-xs font-bold text-[#A9B7CB] mb-2">
                       قابلیت‌های مشمول:
                     </div>
                     {plan.features.map((feat, idx) => (
@@ -117,7 +120,7 @@ export function PricingSection() {
                   {/* Limitations (Exclusions) */}
                   {plan.limitations.length > 0 && (
                     <div className="pt-4 border-t border-[#26364D]/50 space-y-2 mb-6">
-                      <div className="text-[11px] font-mono uppercase text-[#64748B] tracking-wider mb-1">
+                      <div className="text-xs font-bold text-[#64748B] mb-1">
                         عدم شمول:
                       </div>
                       {plan.limitations.map((lim, idx) => (

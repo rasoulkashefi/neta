@@ -33,7 +33,7 @@ export default async function ServiceDetailPage({
       <main className="flex-1 py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs text-[#A9B7CB] mb-8 font-mono">
+          <div className="flex items-center gap-2 text-xs text-[#A9B7CB] mb-8 font-medium">
             <Link href="/" className="hover:text-[#38D9F5]">نتا</Link>
             <span>/</span>
             <Link href="/services" className="hover:text-[#38D9F5]">سرویس‌ها</Link>

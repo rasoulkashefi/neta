@@ -97,7 +97,7 @@ export function AppNav({ children }: { children: React.ReactNode }) {
               </div>
               <div className="overflow-hidden">
                 <div className="text-xs font-bold text-[#E6EDF7] truncate">کاربر حرفه‌ای</div>
-                <div className="text-[10px] font-mono text-[#39C99A]">پلن Personal Pro</div>
+                <div className="text-[10px] font-bold text-[#39C99A]">پلن Personal Pro</div>
               </div>
             </div>
             <span className="w-2 h-2 rounded-full bg-[#39C99A] animate-pulse" title="متصل" />

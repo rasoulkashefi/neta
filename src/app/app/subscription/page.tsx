@@ -34,7 +34,7 @@ export default function AppSubscriptionPage() {
           </div>
 
           <div className="text-start sm:text-end">
-            <span className="font-mono text-2xl font-black text-[#38D9F5]">۱۹۵,۰۰۰ تومان</span>
+            <span className="text-2xl font-black text-[#38D9F5]">۱۹۵,۰۰۰ تومان</span>
             <span className="text-xs text-[#A9B7CB] block mt-0.5">تمدید بعدی: ۲۸ آبان ۱۴۰۵</span>
           </div>
         </div>
@@ -81,10 +81,10 @@ export default function AppSubscriptionPage() {
           <div className="py-3 flex items-center justify-between">
             <div>
               <span className="font-bold text-[#E6EDF7]">اشتراک ماهانه Personal Pro</span>
-              <span className="text-[#64748B] block mt-0.5 font-mono">۲۸ مهر ۱۴۰۵ • فاکتور #NETA-8492</span>
+              <span className="text-[#64748B] block mt-0.5">۲۸ مهر ۱۴۰۵ • فاکتور <span className="font-mono">#NETA-8492</span></span>
             </div>
             <div className="text-end">
-              <span className="font-mono font-bold text-[#E6EDF7]">۱۹۵,۰۰۰ تومان</span>
+              <span className="font-bold text-[#E6EDF7]">۱۹۵,۰۰۰ تومان</span>
               <Badge variant="success" size="sm" className="ms-2">پرداخت‌شده</Badge>
             </div>
           </div>

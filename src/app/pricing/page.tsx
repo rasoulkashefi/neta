@@ -49,7 +49,7 @@ export default function PricingPage() {
                 }`}
               >
                 <span>پرداخت سالانه</span>
-                <span className="text-[10px] font-mono bg-[#38D9F5]/20 text-[#38D9F5] px-1.5 py-0.5 rounded-full">
+                <span className="text-xs font-bold bg-[#38D9F5]/20 text-[#38D9F5] px-2 py-0.5 rounded-full">
                   ۲۰٪ تخفیف
                 </span>
               </button>
@@ -86,12 +86,15 @@ export default function PricingPage() {
                     </div>
 
                     <div className="mb-6">
-                      <div className="flex items-baseline gap-1">
-                        <span className="font-mono text-3xl sm:text-4xl font-black text-[#E6EDF7]">
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-3xl sm:text-4xl font-black text-[#E6EDF7] tracking-tight">
                           {price}
                         </span>
                         {plan.id !== 'starter' && (
-                          <span className="text-xs text-[#A9B7CB]">/ ماهانه</span>
+                          <span className="text-sm font-semibold text-[#A9B7CB]">تومان</span>
+                        )}
+                        {plan.id !== 'starter' && (
+                          <span className="text-xs text-[#64748B]">/ ماهانه</span>
                         )}
                       </div>
                       <p className="text-xs text-[#A9B7CB] mt-2 leading-[1.6]">
@@ -100,7 +103,7 @@ export default function PricingPage() {
                     </div>
 
                     <div className="pt-6 border-t border-[#26364D]/70 space-y-3 mb-6">
-                      <div className="text-xs font-mono uppercase text-[#A9B7CB] tracking-wider mb-2">
+                      <div className="text-xs font-bold text-[#A9B7CB] mb-2">
                         امکانات و ظرفیت‌ها:
                       </div>
                       {plan.features.map((feat, idx) => (
@@ -113,7 +116,7 @@ export default function PricingPage() {
 
                     {plan.limitations.length > 0 && (
                       <div className="pt-4 border-t border-[#26364D]/50 space-y-2 mb-6">
-                        <div className="text-[11px] font-mono uppercase text-[#64748B] tracking-wider mb-1">
+                        <div className="text-xs font-bold text-[#64748B] mb-1">
                           محدودیت‌ها و موارد خارج از این پلن:
                         </div>
                         {plan.limitations.map((lim, idx) => (

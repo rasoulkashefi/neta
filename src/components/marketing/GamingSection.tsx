@@ -67,7 +67,7 @@ export function GamingSection() {
             {/* Left: Server Region Selector & Technical Notes */}
             <div className="lg:col-span-5 space-y-6">
               <div>
-                <h4 className="text-xs font-mono uppercase text-[#A9B7CB] mb-3">
+                <h4 className="text-xs font-bold text-[#A9B7CB] mb-3">
                   انتخاب ریجن سرور بازی:
                 </h4>
                 <div className="space-y-2">

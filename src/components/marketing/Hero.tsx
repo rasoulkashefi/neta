@@ -92,9 +92,9 @@ export function Hero() {
                 <div className="text-xs text-[#A9B7CB] mb-3 leading-[1.6]">
                   اتصال بدون خطا به کلود، داکر، و هوش مصنوعی با پروکسی لایه ۷.
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#8B7CFF]">
+                <div className="flex items-center gap-1.5 text-[11px] text-[#8B7CFF]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#8B7CFF]" />
-                  <span>50+ سرویس اعتبارسنجی‌شده</span>
+                  <span>۵۰+ سرویس اعتبارسنجی‌شده</span>
                 </div>
               </div>
 
@@ -112,9 +112,9 @@ export function Hero() {
                 <div className="text-xs text-[#A9B7CB] mb-3 leading-[1.6]">
                   رزولوشن رمزنگاری‌شده DoH با تاخیر زیر ۱۰ میلی‌ثانیه در لبه محلی.
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#38D9F5]">
+                <div className="flex items-center gap-1.5 text-[11px] text-[#38D9F5]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#38D9F5]" />
-                  <span className="tabular-nums">7.4 ms میانگین پاسخ</span>
+                  <span><span className="font-mono tabular-nums">7.4 ms</span> میانگین پاسخ</span>
                 </div>
               </div>
 
@@ -132,9 +132,9 @@ export function Hero() {
                 <div className="text-xs text-[#A9B7CB] mb-3 leading-[1.6]">
                   کاهش جیتر و تثبیت پکت‌های والورانت و CS2 روی رله‌های خاورمیانه.
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#F5A65B]">
+                <div className="flex items-center gap-1.5 text-[11px] text-[#F5A65B]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#F5A65B]" />
-                  <span className="tabular-nums">0.0% پکت‌لاس / 34ms</span>
+                  <span>پکت‌لاس <span className="font-mono tabular-nums">0.0%</span> / <span className="font-mono tabular-nums">34ms</span></span>
                 </div>
               </div>
             </div>
