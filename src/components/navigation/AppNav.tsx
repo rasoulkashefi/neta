@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { createClient } from '@/lib/supabase/client';
+import { useRouter } from 'next/navigation';
 import {
   LayoutDashboard,
   Layers,
@@ -77,8 +79,26 @@ const NAV_SECTIONS: NavSection[] = [
 ];
 
 export function AppNav({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+
+  React.useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data }) => {
+      if (data?.user?.email) {
+        setUserEmail(data.user.email);
+      }
+    });
+  }, []);
+
+  const handleSignOut = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.push('/login');
+    router.refresh();
+  };
 
   return (
     <div className="min-h-screen bg-[#080E18] text-[#E6EDF7] flex flex-col md:flex-row">
@@ -195,18 +215,25 @@ export function AppNav({ children }: { children: React.ReactNode }) {
 
         {/* Bottom Actions */}
         <div className="pt-4 mt-6 border-t border-[#26364D]/60 space-y-2">
+          {userEmail && (
+            <div className="px-3 py-1.5 rounded-lg bg-[#0E1726] border border-[#26364D]/50 text-[11px] text-[#A9B7CB] flex items-center gap-2">
+              <User className="w-3.5 h-3.5 text-[#38D9F5] shrink-0" />
+              <span className="truncate font-mono dir-ltr">{userEmail}</span>
+            </div>
+          )}
+
           <div className="px-3 py-2 rounded-lg bg-[#0E1726] border border-[#26364D]/50 text-[11px] text-[#A9B7CB] flex items-center justify-between">
             <span>گره متصل:</span>
             <span className="font-mono text-[#38D9F5]">de-fra-01 (42ms)</span>
           </div>
 
-          <Link
-            href="/login"
-            className="flex items-center gap-2 px-3 py-2 text-xs text-[#F16D7A] hover:bg-[#F16D7A]/10 rounded-lg transition-colors"
+          <button
+            onClick={handleSignOut}
+            className="w-full flex items-center gap-2 px-3 py-2 text-xs text-[#F16D7A] hover:bg-[#F16D7A]/10 rounded-lg transition-colors cursor-pointer text-right"
           >
             <LogOut className="w-4 h-4" />
             <span>خروج از حساب</span>
-          </Link>
+          </button>
         </div>
       </aside>
 
