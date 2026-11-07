@@ -2,16 +2,22 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
 import { submitSandboxPayment } from './actions';
 import { ShieldCheck, CheckCircle2, XCircle, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
-export function SandboxTerminal() {
-  const searchParams = useSearchParams();
-  const authority = searchParams.get('authority');
+interface SandboxTerminalProps {
+  authority: string | null;
+  order: {
+    id: string;
+    amount_toman: number;
+    status: string;
+    gateway: string;
+  } | null;
+}
 
-  if (!authority) {
+export function SandboxTerminal({ authority, order }: SandboxTerminalProps) {
+  if (!authority || !order) {
     return (
       <div className="min-h-screen bg-[#080E18] text-[#E6EDF7] flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-[#121D30] border border-[#FF4D4D]/30 p-8 rounded-3xl text-center">
@@ -27,6 +33,25 @@ export function SandboxTerminal() {
       </div>
     );
   }
+
+  if (order.status !== 'pending') {
+    return (
+      <div className="min-h-screen bg-[#080E18] text-[#E6EDF7] flex items-center justify-center p-4">
+        <div className="max-w-md w-full bg-[#121D30] border border-[#26364D] p-8 rounded-3xl text-center">
+          <AlertTriangle className="w-12 h-12 text-[#FFB020] mx-auto mb-4" />
+          <h1 className="text-xl font-black mb-2">این تراکنش قبلاً تعیین وضعیت شده است</h1>
+          <p className="text-xs text-[#A9B7CB] mb-6">وضعیت فعلی: {order.status === 'paid' ? 'پرداخت شده' : 'لغو یا ناموفق'}</p>
+          <Link href="/app/subscription">
+            <Button variant="secondary" size="md" className="w-full">
+              بازگشت به کیف‌پول
+            </Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const formattedAmount = Number(order.amount_toman).toLocaleString('fa-IR');
 
   return (
     <div className="min-h-screen bg-[#070C15] text-[#E6EDF7] flex flex-col justify-between p-4 sm:p-8">
@@ -54,9 +79,9 @@ export function SandboxTerminal() {
       <div className="max-w-md w-full mx-auto my-8">
         <div className="bg-[#10192A] border border-[#26364D] rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
           <div className="text-center pb-6 border-b border-[#26364D]/60">
-            <span className="text-xs text-[#A9B7CB] block mb-1">درگاه پرداخت آزمایشی</span>
-            <div className="text-2xl font-black text-[#38D9F5] tracking-tight">
-              تایید شارژ حساب کاربری
+            <span className="text-xs text-[#A9B7CB] block mb-1">مبلغ قابل پرداخت</span>
+            <div className="text-3xl font-black text-[#38D9F5] tracking-tight">
+              {formattedAmount} <span className="text-sm font-normal text-[#A9B7CB]">تومان</span>
             </div>
           </div>
 

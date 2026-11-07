@@ -1,4 +1,5 @@
 import { createClient } from './server';
+import { createAdminClient } from './admin';
 
 export interface CreateOrderParams {
   workspaceId: string;
@@ -34,15 +35,15 @@ export async function getCurrentUserWorkspaceId(): Promise<string | null> {
 }
 
 /**
- * Create a new payment order and return gateway/sandbox checkout URL
+ * Create a new payment order using admin client to bypass RLS restrictions safely
  */
 export async function createPaymentOrder(params: CreateOrderParams): Promise<PaymentOrderResult> {
-  const supabase = await createClient();
+  const adminSupabase = createAdminClient();
   const gateway = params.gateway || 'sandbox';
   const authority = 'AUTH-' + Math.random().toString(36).substring(2, 10).toUpperCase() + '-' + Date.now();
   const idempotencyKey = 'ord_' + authority;
 
-  const { data, error } = await supabase
+  const { data, error } = await adminSupabase
     .from('payment_orders')
     .insert({
       workspace_id: params.workspaceId,
@@ -59,7 +60,7 @@ export async function createPaymentOrder(params: CreateOrderParams): Promise<Pay
 
   if (error || !data) {
     console.error('Error creating payment order:', error);
-    throw new Error('خطا در ثبت سفارش پرداخت');
+    throw new Error('خطا در ثبت سفارش پرداخت: ' + (error?.message || 'نامشخص'));
   }
 
   // Generate Payment URL
@@ -76,9 +77,9 @@ export async function createPaymentOrder(params: CreateOrderParams): Promise<Pay
  * Verify payment with server-side atomic settlement into the Double-Entry Ledger
  */
 export async function verifyPayment(authority: string, success: boolean, trackingCode?: string) {
-  const supabase = await createClient();
+  const adminSupabase = createAdminClient();
 
-  const { data, error } = await supabase.rpc('verify_and_settle_payment', {
+  const { data, error } = await adminSupabase.rpc('verify_and_settle_payment', {
     p_authority: authority,
     p_success: success,
     p_tracking_code: trackingCode || null,
@@ -86,8 +87,24 @@ export async function verifyPayment(authority: string, success: boolean, trackin
 
   if (error) {
     console.error('Verification error:', error);
-    throw new Error('خطا در اعتبارسنجی پرداخت');
+    throw new Error('خطا در اعتبارسنجی پرداخت: ' + error.message);
   }
 
   return data?.[0] || null;
+}
+
+/**
+ * Get order details by authority
+ */
+export async function getOrderByAuthority(authority: string) {
+  const adminSupabase = createAdminClient();
+
+  const { data, error } = await adminSupabase
+    .from('payment_orders')
+    .select('id, workspace_id, amount_toman, status, gateway, created_at')
+    .eq('authority', authority)
+    .maybeSingle();
+
+  if (error || !data) return null;
+  return data;
 }
