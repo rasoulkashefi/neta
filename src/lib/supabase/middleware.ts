@@ -40,6 +40,14 @@ export async function updateSession(request: NextRequest) {
   const isProtectedPath = pathname.startsWith('/app');
   const isAuthPage = pathname === '/login' || pathname === '/signup';
 
+  // Automatically catch auth confirmation codes landing on root and route to callback
+  const authCode = request.nextUrl.searchParams.get('code');
+  if (authCode && pathname !== '/auth/callback') {
+    const callbackUrl = request.nextUrl.clone();
+    callbackUrl.pathname = '/auth/callback';
+    return NextResponse.redirect(callbackUrl);
+  }
+
   if (isProtectedPath && !user) {
     const url = request.nextUrl.clone();
     url.pathname = '/login';
