@@ -6,17 +6,17 @@
 
 ## ۱. تابلوی پیشرفت لحظه‌ای (Live Status)
 
-- **وضعیت کنونی:** **فاز ۰ و فاز ۱ و فاز ۲ با موفقیت ۱۰۰٪ در پایگاه‌داده آنلاین (`dailwlebkgyvncejucxr`) اعمال و تایید شدند.**
-- **فاز ۳ (کاتالوگ محصولات، پلن‌ها و اشتراک‌ها):** مایگریشن `20261107000001_create_products_and_entitlements.sql` و کلاینت تایپ‌شده `src/lib/supabase/entitlements.ts` آماده شد.
-- **ایزوله‌سازی محیط:** اختصاصی برای پروژه نتا‌لند بدون وابستگی به هیچ اکانت یا پروژه جانبی.
+- **وضعیت کنونی:** **فازهای ۰، ۱، ۲ و ۳ در پایگاه داده آنلاین (`dailwlebkgyvncejucxr`) تایید و ۱۰۰٪ فعال هستند.**
+- **فاز ۴ (تله‌متری و مدل مصرف):** فایل مایگریشن `20261107000002_create_usage_and_pricing.sql` و متد امن سروری `src/lib/supabase/telemetry.ts` آماده اجرا شد.
+- **ایزوله‌سازی:** ۱۰۰٪ مستقل و اختصاصی نتا‌لند.
 
 | فاز | عنوان | وضعیت | شرح دستاوردها و اقدامات انجام‌شده |
 | :---: | :--- | :---: | :--- |
 | **۰** | آماده‌سازی پروژه و CLI | 🟢 تکمیل شد | نصب پکیج‌ها، اتصال به پروژه اختصاصی نتا، ایجاد `.env.local` و مدیریت مایگریشن‌ها |
 | **۱** | احراز هویت (Auth) | 🟢 فعال و زنده | کلاینت‌های SSR، پروکسی Next.js 16، صفحات `/login` و `/signup` متصل به Auth زنده |
 | **۲** | پروفایل و Workspaceها | 🟢 فعال در دیتابیس | جداول `profiles`, `workspaces`, `workspace_members` همراه RLS و تریگر ثبت‌نام خودکار |
-| **۳** | کاتالوگ محصولات و اشتراک‌ها | 🟡 آماده اجرا | جداول `products`، `product_plans`، `workspace_subscriptions`، `entitlements` |
-| **۴** | مدل مصرف و تله‌متری | ⚪ در نوبت | ثبت ضدتکرار رویدادهای مصرف توکن، DNS و ترافیک |
+| **۳** | کاتالوگ محصولات و اشتراک‌ها | 🟢 فعال در دیتابیس | جداول `products`، `product_plans`، `workspace_subscriptions`، `entitlements` همراه داده‌های اولیه |
+| **۴** | مدل مصرف و تله‌متری | 🟡 مایگریشن آماده | جداول `pricing_versions` و `usage_events` با تضمین ضدتکرار (`idempotency_key`) |
 | **۵** | دفترکل مالی و کیف‌پول | ⚪ در نوبت | دفترکل دوطرفه موازنه مالی (Double-Entry Ledger) |
 | **۶** | درگاه پرداخت و صورت‌حساب | ⚪ در نوبت | اعتبارسنجی سروری پرداخت و جلوگیری از تراکنش‌های تکراری |
 | **۷** | درگاه هوش مصنوعی (AI Gateway) | ⚪ در نوبت | کلیدهای API هش‌شده، سقف هزینه و روتر توکن‌ها |
@@ -26,9 +26,8 @@
 
 ## ۲. ساختار کلاینت‌ها و مایگریشن‌های اعمال‌شده
 
-- `supabase/migrations/20261107000000_init_auth_and_profiles.sql`: ایجاد موفق پروفایل و فضای کاری شخصی (اعمال‌شده در دیتابیس).
-- `supabase/migrations/20261107000001_create_products_and_entitlements.sql`: ساخت کاتالوگ محصولات، پلن‌ها، اشتراک و سهمیه‌های مصرفی.
-- `src/lib/supabase/client.ts`: کلاینت مرورگر بر پایه `createBrowserClient`.
-- `src/lib/supabase/server.ts`: کلاینت سرور بر پایه `createServerClient` و کوکی‌های Next.js 16.
-- `src/lib/supabase/entitlements.ts`: متدهای سروری واکشی اشتراک‌ها (`getWorkspaceSubscriptions`) و بررسی مجوزها (`hasEntitlement`).
-- `src/proxy.ts`: محافظت از نشست‌های کاربر و مسیرهای `/app/*`.
+- `supabase/migrations/20261107000000_init_auth_and_profiles.sql`: ایجاد موفق پروفایل و فضای کاری شخصی (فعال در دیتابیس).
+- `supabase/migrations/20261107000001_create_products_and_entitlements.sql`: کاتالوگ محصولات و پلن‌ها (فعال در دیتابیس).
+- `supabase/migrations/20261107000002_create_usage_and_pricing.sql`: ثبت رویدادهای مصرف و نسخه‌های قیمت‌گذاری با تابع `record_usage_event`.
+- `src/lib/supabase/telemetry.ts`: ثبت ضدتکرار رویداد مصرف از سمت سرور (`trackUsageEvent`).
+- `src/lib/supabase/entitlements.ts`: سرویس واکشی اشتراک‌ها و کنترل دسترسی‌ها.
