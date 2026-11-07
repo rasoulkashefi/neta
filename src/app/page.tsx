@@ -1,15 +1,21 @@
 import React from 'react';
 import { Header } from '@/components/navigation/Header';
 import { Footer } from '@/components/navigation/Footer';
-import { Hero } from '@/components/marketing/Hero';
+import { PlatformHero } from '@/components/marketing/PlatformHero';
+import { ProductSpectrum } from '@/components/marketing/ProductSpectrum';
 import { ConnectionTest } from '@/components/marketing/ConnectionTest';
-import { CapabilityCards } from '@/components/marketing/CapabilityCards';
-import { ServiceDirectoryPreview } from '@/components/marketing/ServiceDirectoryPreview';
+import { DeveloperGateway } from '@/components/marketing/DeveloperGateway';
 import { GamingSection } from '@/components/marketing/GamingSection';
+import { MarketplaceBanner } from '@/components/marketing/MarketplaceBanner';
 import { SetupWizardSection } from '@/components/marketing/SetupWizardSection';
 import { PricingSection } from '@/components/marketing/PricingSection';
 import { TrustSection } from '@/components/marketing/TrustSection';
 import { FAQSection } from '@/components/marketing/FAQSection';
+
+export const metadata = {
+  title: 'نتا — پلتفرم یکپارچه محصولات دیجیتال، هوش مصنوعی و اتصال | Neta.land',
+  description: 'یک بستر متمرکز برای دسترسی به مدل‌های هوش مصنوعی (Unified AI API)، بهینه‌سازی اتصال و پینگ بازی، DNS سریع Anycast و زیرساخت‌های ابری.',
+};
 
 export default function HomePage() {
   return (
@@ -18,31 +24,36 @@ export default function HomePage() {
       <Header />
 
       <main className="flex-grow">
-        {/* Section 01: Hero */}
-        <Hero />
+        {/* Section 01: Multi-Product Platform Hero */}
+        <PlatformHero />
 
-        {/* Section 02: Connection Test */}
-        <ConnectionTest />
+        {/* Section 02: The Three Product Domains (Connectivity, AI, Cloud/Marketplace) */}
+        <ProductSpectrum />
 
-        {/* Section 03: Three Capabilities (Access, DNS, Gaming) */}
-        <CapabilityCards />
+        {/* Section 03: Live Connection & DNS Diagnostics */}
+        <div id="test">
+          <ConnectionTest />
+        </div>
 
-        {/* Section 04: Supported Services */}
-        <ServiceDirectoryPreview />
+        {/* Section 04: Developer Gateway (Unified AI API & Code Snippets) */}
+        <DeveloperGateway />
 
-        {/* Section 05: Gaming */}
+        {/* Section 05: Gaming & Low-Latency Relays */}
         <GamingSection />
 
-        {/* Section 06: Setup Wizard */}
+        {/* Section 06: Marketplace & Partners Announcement */}
+        <MarketplaceBanner />
+
+        {/* Section 07: Device Setup Wizard */}
         <SetupWizardSection />
 
-        {/* Section 07: Pricing */}
+        {/* Section 08: Pricing & Plans */}
         <PricingSection />
 
-        {/* Section 08: Trust and Transparency */}
+        {/* Section 09: Transparency & Trust */}
         <TrustSection />
 
-        {/* Section 09: FAQ and Final CTA */}
+        {/* Section 10: FAQ */}
         <FAQSection />
       </main>
 
