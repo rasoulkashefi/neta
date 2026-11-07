@@ -6,8 +6,8 @@
 
 ## ۱. تابلوی پیشرفت لحظه‌ای (Live Status)
 
-- **وضعیت کنونی:** **فازهای ۰، ۱، ۲، ۳ و ۴ در دیتابیس آنلاین (`dailwlebkgyvncejucxr`) تایید و ۱۰۰٪ فعال هستند.**
-- **فاز ۵ (دفترکل مالی و کیف‌پول):** فایل مایگریشن `20261107000003_create_double_entry_ledger.sql` و کلاینت محاسبات ریاضی `src/lib/supabase/wallet.ts` آماده اجرا شد.
+- **وضعیت کنونی:** **فازهای ۰، ۱، ۲، ۳، ۴، ۵ و ۶ در دیتابیس آنلاین (`dailwlebkgyvncejucxr`) تایید و ۱۰۰٪ فعال هستند.**
+- **فاز ۶ (درگاه پرداخت و شارژ کیف‌پول):** سیستم پرداخت با درگاه آزمایشی سندباکس (`/payment/sandbox`)، اعتبارسنجی سروری، و اتصال زنده صفحه `/app/subscription` پیاده‌سازی و پوش شد.
 - **ایزوله‌سازی:** ۱۰۰٪ مستقل و اختصاصی نتا‌لند.
 
 | فاز | عنوان | وضعیت | شرح دستاوردها و اقدامات انجام‌شده |
@@ -17,8 +17,8 @@
 | **۲** | پروفایل و Workspaceها | 🟢 فعال در دیتابیس | جداول `profiles`, `workspaces`, `workspace_members` همراه RLS و تریگر ثبت‌نام خودکار |
 | **۳** | کاتالوگ محصولات و اشتراک‌ها | 🟢 فعال در دیتابیس | جداول `products`، `product_plans`، `workspace_subscriptions`، `entitlements` همراه داده‌های اولیه |
 | **۴** | مدل مصرف و تله‌متری | 🟢 فعال در دیتابیس | جداول `pricing_versions` و `usage_events` همراه با تابع ضدتکرار `record_usage_event` |
-| **۵** | دفترکل مالی و کیف‌پول | 🟡 مایگریشن آماده | دفترکل دوطرفه (`ledger_entries`)، حسابداری موازنه، رزرو اعتبار و شارژ اتمیک |
-| **۶** | درگاه پرداخت و صورت‌حساب | ⚪ در نوبت | اعتبارسنجی سروری پرداخت و جلوگیری از تراکنش‌های تکراری |
+| **۵** | دفترکل مالی و کیف‌پول | 🟢 فعال در دیتابیس | دفترکل دوطرفه (`ledger_entries`)، حسابداری موازنه، رزرو اعتبار و شارژ اتمیک |
+| **۶** | درگاه پرداخت و صورت‌حساب | 🟢 فعال در دیتابیس و فرانت | جدول `payment_orders`، تابع `verify_and_settle_payment`، صفحه درگاه سندباکس و شارژ زنده |
 | **۷** | درگاه هوش مصنوعی (AI Gateway) | ⚪ در نوبت | کلیدهای API هش‌شده، سقف هزینه و روتر توکن‌ها |
 | **۸** | اتصال سرویس‌های شبکه | ⚪ در نوبت | مدیریت خودکار نودهای Anycast برای Smart DNS و گیمینگ |
 
@@ -26,9 +26,11 @@
 
 ## ۲. ساختار کلاینت‌ها و مایگریشن‌های اعمال‌شده
 
-- `supabase/migrations/20261107000000_init_auth_and_profiles.sql`: ایجاد موفق پروفایل و فضای کاری شخصی (فعال در دیتابیس).
-- `supabase/migrations/20261107000001_create_products_and_entitlements.sql`: کاتالوگ محصولات و پلن‌ها (فعال در دیتابیس).
-- `supabase/migrations/20261107000002_create_usage_and_pricing.sql`: ثبت رویدادهای مصرف و تعرفه‌ها (فعال در دیتابیس).
-- `supabase/migrations/20261107000003_create_double_entry_ledger.sql`: دفترکل مالی دوطرفه با توابع `wallet_topup`، `wallet_hold_reserve` و `get_workspace_balance`.
-- `src/lib/supabase/wallet.ts`: سرویس سروری امور مالی، استعلام موجودی، رزرو و تسویه مصرف.
-- `src/lib/supabase/telemetry.ts`: ثبت ضدتکرار رویداد مصرف از سمت سرور.
+- `supabase/migrations/20261107000000_init_auth_and_profiles.sql`: پروفایل و فضای کاری شخصی (فعال).
+- `supabase/migrations/20261107000001_create_products_and_entitlements.sql`: کاتالوگ محصولات و پلن‌ها (فعال).
+- `supabase/migrations/20261107000002_create_usage_and_pricing.sql`: تله‌متری و مدل مصرف (فعال).
+- `supabase/migrations/20261107000003_create_double_entry_ledger.sql`: دفترکل مالی دوطرفه (فعال).
+- `supabase/migrations/20261107000004_create_payment_orders.sql`: سفارش‌های پرداخت و اعتبارسنجی سروری (فعال).
+- `src/lib/supabase/payments.ts`: مدیریت ایجاد سفارش و اعتبارسنجی پرداخت.
+- `src/app/payment/sandbox/`: پایانه شبیه‌ساز پرداخت نتا‌لند برای تست قبل از اینماد.
+- `src/app/app/subscription/`: صفحه مدیریت زنده کیف‌پول و تاریخچه اسناد مالی دفترکل.
