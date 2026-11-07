@@ -177,7 +177,7 @@ export function ConnectionTest() {
               size="md"
               onClick={runAllDiagnostics}
               isLoading={isRunningAll}
-              leftIcon={<Play className="w-4 h-4 fill-current rtl:-scale-x-100" />}
+              leftIcon={<Play className="w-4 h-4 fill-current" />}
             >
               اجرای همزمان هر ۳ تست
             </Button>

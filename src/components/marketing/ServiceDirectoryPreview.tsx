@@ -51,7 +51,7 @@ export function ServiceDirectoryPreview() {
           </div>
 
           <Link href="/services">
-            <Button variant="outline" size="md" leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+            <Button variant="outline" size="md" leftIcon={<ArrowLeft className="w-4 h-4" />}>
               مشاهده فهرست کامل (۵۰+ سرویس)
             </Button>
           </Link>
@@ -133,7 +133,7 @@ export function ServiceDirectoryPreview() {
                 </div>
                 <span className="text-[#8B7CFF] font-semibold flex items-center gap-1 group-hover:gap-1.5 transition-all">
                   <span>راهنما</span>
-                  <ArrowLeft className="w-3 h-3 rtl:-scale-x-100" />
+                  <ArrowLeft className="w-3 h-3" />
                 </span>
               </div>
             </Link>

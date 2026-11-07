@@ -78,7 +78,7 @@ export default function AppDashboardOverview() {
           </h2>
           <Link href="/products" className="text-xs text-[#38D9F5] hover:underline flex items-center gap-1">
             <span>کاتالوگ کامل محصولات</span>
-            <ArrowLeft className="w-3.5 h-3.5 rtl:-scale-x-100" />
+            <ArrowLeft className="w-3.5 h-3.5" />
           </Link>
         </div>
 
@@ -100,7 +100,7 @@ export default function AppDashboardOverview() {
             <Link href="/app/ai">
               <Button variant="ghost" size="sm" className="w-full justify-between text-[#8B7CFF] px-2">
                 <span>کنسول مدل‌ها</span>
-                <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                <ArrowLeft className="w-4 h-4" />
               </Button>
             </Link>
           </div>
@@ -122,7 +122,7 @@ export default function AppDashboardOverview() {
             <Link href="/app/dns">
               <Button variant="ghost" size="sm" className="w-full justify-between text-[#38D9F5] px-2">
                 <span>تنظیمات دی‌ان‌اس</span>
-                <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                <ArrowLeft className="w-4 h-4" />
               </Button>
             </Link>
           </div>
@@ -144,7 +144,7 @@ export default function AppDashboardOverview() {
             <Link href="/app/gaming">
               <Button variant="ghost" size="sm" className="w-full justify-between text-[#F5A65B] px-2">
                 <span>پیکربندی بازی‌ها</span>
-                <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                <ArrowLeft className="w-4 h-4" />
               </Button>
             </Link>
           </div>
@@ -166,7 +166,7 @@ export default function AppDashboardOverview() {
             <Link href="/app/access">
               <Button variant="ghost" size="sm" className="w-full justify-between text-[#39C99A] px-2">
                 <span>مدیریت سرویس‌ها</span>
-                <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                <ArrowLeft className="w-4 h-4" />
               </Button>
             </Link>
           </div>

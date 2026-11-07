@@ -151,7 +151,7 @@ export default async function ServiceDetailPage({
                 </Button>
               </Link>
               <Link href="/test">
-                <Button variant="access" size="sm" leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                <Button variant="access" size="sm" leftIcon={<ArrowLeft className="w-4 h-4" />}>
                   انجام تست زنده اتصال
                 </Button>
               </Link>

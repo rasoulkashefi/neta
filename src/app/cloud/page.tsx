@@ -332,7 +332,7 @@ export default function CloudAndPartnersPage() {
                       type="submit"
                       variant="primary"
                       size="sm"
-                      leftIcon={<Send className="w-4 h-4 rtl:-scale-x-100" />}
+                      leftIcon={<Send className="w-4 h-4" />}
                     >
                       ارسال درخواست بررسی
                     </Button>

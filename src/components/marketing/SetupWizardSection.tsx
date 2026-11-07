@@ -165,7 +165,7 @@ export function SetupWizardSection() {
               </div>
 
               <div className="flex justify-end pt-4 border-t border-[#26364D]/60">
-                <Button variant="primary" onClick={() => setCurrentStep(2)} leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                <Button variant="primary" onClick={() => setCurrentStep(2)} leftIcon={<ArrowLeft className="w-4 h-4" />}>
                   ادامه به انتخاب دستگاه
                 </Button>
               </div>
@@ -206,7 +206,7 @@ export function SetupWizardSection() {
                 <Button variant="ghost" onClick={() => setCurrentStep(1)}>
                   بازگشت
                 </Button>
-                <Button variant="primary" onClick={() => setCurrentStep(3)} leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                <Button variant="primary" onClick={() => setCurrentStep(3)} leftIcon={<ArrowLeft className="w-4 h-4" />}>
                   بررسی سازگاری دستگاه
                 </Button>
               </div>
@@ -241,7 +241,7 @@ export function SetupWizardSection() {
                 <Button variant="ghost" onClick={() => setCurrentStep(2)}>
                   بازگشت
                 </Button>
-                <Button variant="primary" onClick={() => setCurrentStep(4)} leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                <Button variant="primary" onClick={() => setCurrentStep(4)} leftIcon={<ArrowLeft className="w-4 h-4" />}>
                   مشاهده مراحل راه‌اندازی
                 </Button>
               </div>
@@ -309,7 +309,7 @@ export function SetupWizardSection() {
                 <Button variant="ghost" onClick={() => setCurrentStep(3)}>
                   بازگشت
                 </Button>
-                <Button variant="primary" onClick={() => setCurrentStep(5)} leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                <Button variant="primary" onClick={() => setCurrentStep(5)} leftIcon={<ArrowLeft className="w-4 h-4" />}>
                   انجام تست راستی‌آزمایی
                 </Button>
               </div>

@@ -175,7 +175,7 @@ export function GamingSection() {
                     variant="gaming"
                     size="md"
                     className="w-full sm:w-auto"
-                    leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}
+                    leftIcon={<ArrowLeft className="w-4 h-4" />}
                   >
                     تست اتصال بازی شما
                   </Button>

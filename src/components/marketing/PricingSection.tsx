@@ -140,7 +140,7 @@ export function PricingSection() {
                       variant={plan.isPopular ? 'primary' : isGaming ? 'gaming' : 'outline'}
                       size="md"
                       className="w-full"
-                      leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}
+                      leftIcon={<ArrowLeft className="w-4 h-4" />}
                     >
                       {plan.buttonText}
                     </Button>

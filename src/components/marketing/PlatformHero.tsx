@@ -48,7 +48,7 @@ export function PlatformHero() {
               variant="primary"
               size="lg"
               className="w-full sm:w-auto min-w-[200px]"
-              leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}
+              leftIcon={<ArrowLeft className="w-4 h-4" />}
             >
               کاوش کاتالوگ محصولات
             </Button>

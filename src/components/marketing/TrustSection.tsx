@@ -48,7 +48,7 @@ export function TrustSection() {
             <div className="pt-4 mt-4 border-t border-[#26364D]/60">
               <Link href="/privacy" className="text-xs text-[#38D9F5] hover:underline flex items-center gap-1 font-semibold">
                 <span>سند حریم خصوصی</span>
-                <ArrowLeft className="w-3 h-3 rtl:-scale-x-100" />
+                <ArrowLeft className="w-3 h-3" />
               </Link>
             </div>
           </div>
@@ -67,7 +67,7 @@ export function TrustSection() {
             <div className="pt-4 mt-4 border-t border-[#26364D]/60">
               <Link href="/status" className="text-xs text-[#38D9F5] hover:underline flex items-center gap-1 font-semibold">
                 <span>داشبورد وضعیت گره‌ها</span>
-                <ArrowLeft className="w-3 h-3 rtl:-scale-x-100" />
+                <ArrowLeft className="w-3 h-3" />
               </Link>
             </div>
           </div>
@@ -86,7 +86,7 @@ export function TrustSection() {
             <div className="pt-4 mt-4 border-t border-[#26364D]/60">
               <Link href="/status#incidents" className="text-xs text-[#38D9F5] hover:underline flex items-center gap-1 font-semibold">
                 <span>مشاهده سوابق حوادث</span>
-                <ArrowLeft className="w-3 h-3 rtl:-scale-x-100" />
+                <ArrowLeft className="w-3 h-3" />
               </Link>
             </div>
           </div>
@@ -105,7 +105,7 @@ export function TrustSection() {
             <div className="pt-4 mt-4 border-t border-[#26364D]/60">
               <Link href="/terms" className="text-xs text-[#38D9F5] hover:underline flex items-center gap-1 font-semibold">
                 <span>شرایط و محدودیت‌ها</span>
-                <ArrowLeft className="w-3 h-3 rtl:-scale-x-100" />
+                <ArrowLeft className="w-3 h-3" />
               </Link>
             </div>
           </div>

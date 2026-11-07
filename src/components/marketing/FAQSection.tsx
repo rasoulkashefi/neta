@@ -74,7 +74,7 @@ export function FAQSection() {
                   variant="outline"
                   size="lg"
                   className="w-full sm:w-auto min-w-[180px]"
-                  leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}
+                  leftIcon={<ArrowLeft className="w-4 h-4" />}
                 >
                   ثبت‌نام و شروع رایگان
                 </Button>

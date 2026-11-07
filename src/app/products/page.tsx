@@ -275,7 +275,7 @@ export default function ProductsPage() {
                             variant={product.status === 'available' ? 'primary' : product.status === 'beta' ? 'secondary' : 'outline'}
                             size="sm"
                             className="w-full justify-center"
-                            leftIcon={<ArrowLeft className="w-3.5 h-3.5 rtl:-scale-x-100" />}
+                            leftIcon={<ArrowLeft className="w-3.5 h-3.5" />}
                           >
                             {product.ctaText}
                           </Button>

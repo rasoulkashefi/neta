@@ -152,7 +152,7 @@ export default function AppAIConsolePage() {
           </h2>
           <Link href="/app/ai/usage" className="text-xs text-[#38D9F5] hover:underline flex items-center gap-1">
             <span>گزارش جزئیات مصرف</span>
-            <ArrowLeft className="w-3.5 h-3.5 rtl:-scale-x-100" />
+            <ArrowLeft className="w-3.5 h-3.5" />
           </Link>
         </div>
 

@@ -98,7 +98,7 @@ export default function SignupPage() {
               size="lg"
               className="w-full mt-4"
               isLoading={loading}
-              leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}
+              leftIcon={<ArrowLeft className="w-4 h-4" />}
             >
               شروع رایگان و راه‌اندازی
             </Button>

@@ -128,7 +128,7 @@ export function CapabilityCards() {
                     style={{ color: cap.accentColor }}
                   >
                     <span>{cap.ctaText}</span>
-                    <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                    <ArrowLeft className="w-4 h-4" />
                   </Link>
                 </div>
               </div>

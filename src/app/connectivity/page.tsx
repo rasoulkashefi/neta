@@ -71,7 +71,7 @@ export default function ConnectivityHubPage() {
                 <Link href="/dns" className="flex-1">
                   <Button variant="primary" size="sm" className="w-full justify-between">
                     <span>تنظیمات و جزییات DNS</span>
-                    <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                    <ArrowLeft className="w-4 h-4" />
                   </Button>
                 </Link>
                 <Link href="/help/getting-started-dns">
@@ -110,7 +110,7 @@ export default function ConnectivityHubPage() {
                 <Link href="/gaming" className="flex-1">
                   <Button variant="primary" size="sm" className="w-full justify-between">
                     <span>مشاهده سرورهای بازی</span>
-                    <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                    <ArrowLeft className="w-4 h-4" />
                   </Button>
                 </Link>
                 <Link href="/test">
@@ -149,7 +149,7 @@ export default function ConnectivityHubPage() {
                 <Link href="/services" className="flex-1">
                   <Button variant="primary" size="sm" className="w-full justify-between">
                     <span>کاتالوگ سرویس‌های فعال</span>
-                    <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                    <ArrowLeft className="w-4 h-4" />
                   </Button>
                 </Link>
                 <Link href="/app/access">

@@ -61,7 +61,7 @@ export default function FeaturesPage() {
                 </div>
                 <div className="pt-4">
                   <Link href="/services">
-                    <Button variant="access" size="md" leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                    <Button variant="access" size="md" leftIcon={<ArrowLeft className="w-4 h-4" />}>
                       جستجوی سرویس‌ها در دایرکتوری
                     </Button>
                   </Link>
@@ -114,7 +114,7 @@ export default function FeaturesPage() {
                 </div>
                 <div className="pt-4">
                   <Link href="/dns">
-                    <Button variant="primary" size="md" leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                    <Button variant="primary" size="md" leftIcon={<ArrowLeft className="w-4 h-4" />}>
                       مشاهده مشخصات و تنظیم DNS
                     </Button>
                   </Link>
@@ -191,7 +191,7 @@ export default function FeaturesPage() {
                 </div>
                 <div className="pt-4">
                   <Link href="/gaming">
-                    <Button variant="gaming" size="md" leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                    <Button variant="gaming" size="md" leftIcon={<ArrowLeft className="w-4 h-4" />}>
                       بررسی پینگ بازی‌ها
                     </Button>
                   </Link>

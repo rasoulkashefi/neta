@@ -105,7 +105,7 @@ main();`
 
             <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
               <Link href="/app/ai">
-                <Button variant="primary" size="lg" leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                <Button variant="primary" size="lg" leftIcon={<ArrowLeft className="w-4 h-4" />}>
                   دریافت کلید دسترسی در پنل
                 </Button>
               </Link>

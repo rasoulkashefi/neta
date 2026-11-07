@@ -102,7 +102,7 @@ console.log(response.choices[0].message.content);`
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Link href="/ai">
-                <Button variant="primary" size="md" leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                <Button variant="primary" size="md" leftIcon={<ArrowLeft className="w-4 h-4" />}>
                   مستندات و نمونه کدهای API
                 </Button>
               </Link>

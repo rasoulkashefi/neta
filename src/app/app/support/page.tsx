@@ -81,7 +81,7 @@ export default function AppSupportPage() {
                 />
               </div>
 
-              <Button type="submit" variant="primary" size="md" leftIcon={<Send className="w-4 h-4 rtl:-scale-x-100" />}>
+              <Button type="submit" variant="primary" size="md" leftIcon={<Send className="w-4 h-4" />}>
                 ارسال تیکت پشتیبانی
               </Button>
             </form>

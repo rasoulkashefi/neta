@@ -59,7 +59,7 @@ export default function HelpCenterPage() {
               </p>
               <Link href="/help/getting-started-dns" className="text-xs text-[#38D9F5] font-bold flex items-center gap-1 hover:underline">
                 <span>مشاهده راهنما</span>
-                <ArrowLeft className="w-3.5 h-3.5 rtl:-scale-x-100" />
+                <ArrowLeft className="w-3.5 h-3.5" />
               </Link>
             </div>
 
@@ -73,7 +73,7 @@ export default function HelpCenterPage() {
               </p>
               <Link href="/help/troubleshooting-gaming-jitter" className="text-xs text-[#F5A65B] font-bold flex items-center gap-1 hover:underline">
                 <span>مشاهده راهنما</span>
-                <ArrowLeft className="w-3.5 h-3.5 rtl:-scale-x-100" />
+                <ArrowLeft className="w-3.5 h-3.5" />
               </Link>
             </div>
 
@@ -87,7 +87,7 @@ export default function HelpCenterPage() {
               </p>
               <Link href="/help/ai-tools-access-troubleshooting" className="text-xs text-[#8B7CFF] font-bold flex items-center gap-1 hover:underline">
                 <span>مشاهده راهنما</span>
-                <ArrowLeft className="w-3.5 h-3.5 rtl:-scale-x-100" />
+                <ArrowLeft className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function HelpCenterPage() {
                     </p>
                   </div>
 
-                  <ArrowLeft className="w-4 h-4 text-[#A9B7CB] group-hover:text-[#38D9F5] shrink-0 rtl:-scale-x-100 transition-transform group-hover:-translate-x-1" />
+                  <ArrowLeft className="w-4 h-4 text-[#A9B7CB] group-hover:text-[#38D9F5] shrink-0 transition-transform group-hover:-translate-x-1" />
                 </Link>
               ))}
             </div>

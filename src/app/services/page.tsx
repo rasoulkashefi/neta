@@ -181,7 +181,7 @@ export default function ServicesPage() {
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#8B7CFF] hover:gap-2 transition-all"
                   >
                     <span>راهنمای راه‌اندازی</span>
-                    <ArrowLeft className="w-3.5 h-3.5 rtl:-scale-x-100" />
+                    <ArrowLeft className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>

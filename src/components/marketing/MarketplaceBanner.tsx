@@ -46,7 +46,7 @@ export function MarketplaceBanner() {
 
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
               <Link href="/cloud#marketplace" className="w-full">
-                <Button variant="secondary" size="md" className="w-full justify-center" leftIcon={<ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />}>
+                <Button variant="secondary" size="md" className="w-full justify-center" leftIcon={<ArrowLeft className="w-4 h-4" />}>
                   پیوستن به برنامه همکاران
                 </Button>
               </Link>

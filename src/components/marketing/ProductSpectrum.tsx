@@ -71,7 +71,7 @@ export function ProductSpectrum() {
               <Link href="/connectivity" className="flex-1">
                 <Button variant="primary" size="sm" className="w-full justify-between">
                   <span>مشاهده سرویس‌های اتصال</span>
-                  <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                  <ArrowLeft className="w-4 h-4" />
                 </Button>
               </Link>
               <Link href="/test">
@@ -128,7 +128,7 @@ export function ProductSpectrum() {
               <Link href="/ai" className="flex-1">
                 <Button variant="secondary" size="sm" className="w-full justify-between">
                   <span>درگاه AI و مستندات</span>
-                  <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                  <ArrowLeft className="w-4 h-4" />
                 </Button>
               </Link>
               <Link href="/ai#models">
@@ -179,7 +179,7 @@ export function ProductSpectrum() {
               <Link href="/cloud" className="flex-1">
                 <Button variant="outline" size="sm" className="w-full justify-between">
                   <span>بررسی نقشه راه و همکاران</span>
-                  <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+                  <ArrowLeft className="w-4 h-4" />
                 </Button>
               </Link>
               <Link href="/cloud#marketplace">
