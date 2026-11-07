@@ -89,7 +89,11 @@ create policy "Members can view other members of their workspace"
 
 -- 6. User Provisioning Trigger Function (Atomic Onboarding)
 create or replace function public.handle_new_user()
-returns trigger as $$
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
 declare
   default_name text;
   new_workspace_id uuid;
@@ -113,7 +117,7 @@ begin
 
   return new;
 end;
-$$ language plpgsql security definer;
+$$;
 
 -- Trigger execution on auth.users insert
 drop trigger if exists on_auth_user_created on auth.users;
