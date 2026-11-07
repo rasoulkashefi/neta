@@ -16,22 +16,28 @@ export interface PaymentOrderResult {
 }
 
 /**
- * Get current authenticated user's active workspace ID
+ * Get current authenticated user's active workspace ID.
+ * Authenticates the user session via cookie, then queries workspace using admin client to eliminate RLS recursion.
  */
 export async function getCurrentUserWorkspaceId(): Promise<string | null> {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return null;
 
-  // Find user's workspace
-  const { data: member } = await supabase
+  const adminSupabase = createAdminClient();
+  const { data: member, error } = await adminSupabase
     .from('workspace_members')
     .select('workspace_id')
     .eq('user_id', user.id)
     .limit(1)
     .maybeSingle();
 
-  return member?.workspace_id || null;
+  if (error || !member) {
+    console.error('Error fetching user workspace:', error);
+    return null;
+  }
+
+  return member.workspace_id;
 }
 
 /**

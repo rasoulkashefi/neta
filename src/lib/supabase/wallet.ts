@@ -1,4 +1,4 @@
-import { createClient } from './server';
+import { createAdminClient } from './admin';
 
 export interface WorkspaceBalance {
   available_toman: number;
@@ -16,12 +16,12 @@ export interface LedgerTransactionHistory {
 }
 
 /**
- * Fetch the exact real-time mathematical balance from the Double-Entry Ledger
+ * Fetch the exact real-time mathematical balance from the Double-Entry Ledger using admin client
  */
 export async function getWorkspaceBalance(workspaceId: string): Promise<WorkspaceBalance> {
-  const supabase = await createClient();
+  const adminSupabase = createAdminClient();
 
-  const { data, error } = await supabase.rpc('get_workspace_balance', {
+  const { data, error } = await adminSupabase.rpc('get_workspace_balance', {
     p_workspace_id: workspaceId,
   });
 
@@ -48,9 +48,9 @@ export async function topupWallet(
   paymentReference: string,
   description?: string
 ) {
-  const supabase = await createClient();
+  const adminSupabase = createAdminClient();
 
-  const { data, error } = await supabase.rpc('wallet_topup', {
+  const { data, error } = await adminSupabase.rpc('wallet_topup', {
     p_workspace_id: workspaceId,
     p_amount: amountToman,
     p_idempotency_key: idempotencyKey,
@@ -75,9 +75,9 @@ export async function holdWalletReserve(
   idempotencyKey: string,
   description?: string
 ) {
-  const supabase = await createClient();
+  const adminSupabase = createAdminClient();
 
-  const { data, error } = await supabase.rpc('wallet_hold_reserve', {
+  const { data, error } = await adminSupabase.rpc('wallet_hold_reserve', {
     p_workspace_id: workspaceId,
     p_amount: amountToman,
     p_idempotency_key: idempotencyKey,
@@ -102,9 +102,9 @@ export async function settleWalletUsage(
   idempotencyKey: string,
   fromReserved = false
 ) {
-  const supabase = await createClient();
+  const adminSupabase = createAdminClient();
 
-  const { data, error } = await supabase.rpc('wallet_settle_usage', {
+  const { data, error } = await adminSupabase.rpc('wallet_settle_usage', {
     p_workspace_id: workspaceId,
     p_product_id: productId,
     p_cost_toman: costToman,
@@ -121,12 +121,12 @@ export async function settleWalletUsage(
 }
 
 /**
- * Fetch transaction history for a workspace
+ * Fetch transaction history for a workspace using admin client to guarantee reliable presentation
  */
 export async function getWorkspaceLedgerHistory(workspaceId: string, limit = 20): Promise<LedgerTransactionHistory[]> {
-  const supabase = await createClient();
+  const adminSupabase = createAdminClient();
 
-  const { data, error } = await supabase
+  const { data, error } = await adminSupabase
     .from('ledger_entries')
     .select(`
       id,
@@ -144,6 +144,7 @@ export async function getWorkspaceLedgerHistory(workspaceId: string, limit = 20)
     .limit(limit);
 
   if (error || !data) {
+    console.error('Error fetching ledger history:', error);
     return [];
   }
 
