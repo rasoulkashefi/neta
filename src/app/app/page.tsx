@@ -98,9 +98,13 @@ export default function AppDashboardOverview() {
               </p>
             </div>
             <Link href="/app/ai">
-              <Button variant="ghost" size="sm" className="w-full justify-between text-[#8B7CFF] px-2">
-                <span>کنسول مدل‌ها</span>
-                <ArrowLeft className="w-4 h-4" />
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full justify-between text-[#8B7CFF] px-2"
+                leftIcon={<ArrowLeft className="w-4 h-4 shrink-0" />}
+              >
+                کنسول مدل‌ها
               </Button>
             </Link>
           </div>
@@ -120,9 +124,13 @@ export default function AppDashboardOverview() {
               </p>
             </div>
             <Link href="/app/dns">
-              <Button variant="ghost" size="sm" className="w-full justify-between text-[#38D9F5] px-2">
-                <span>تنظیمات دی‌ان‌اس</span>
-                <ArrowLeft className="w-4 h-4" />
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full justify-between text-[#38D9F5] px-2"
+                leftIcon={<ArrowLeft className="w-4 h-4 shrink-0" />}
+              >
+                تنظیمات دی‌ان‌اس
               </Button>
             </Link>
           </div>
@@ -142,9 +150,13 @@ export default function AppDashboardOverview() {
               </p>
             </div>
             <Link href="/app/gaming">
-              <Button variant="ghost" size="sm" className="w-full justify-between text-[#F5A65B] px-2">
-                <span>پیکربندی بازی‌ها</span>
-                <ArrowLeft className="w-4 h-4" />
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full justify-between text-[#F5A65B] px-2"
+                leftIcon={<ArrowLeft className="w-4 h-4 shrink-0" />}
+              >
+                پیکربندی بازی‌ها
               </Button>
             </Link>
           </div>
@@ -164,9 +176,13 @@ export default function AppDashboardOverview() {
               </p>
             </div>
             <Link href="/app/access">
-              <Button variant="ghost" size="sm" className="w-full justify-between text-[#39C99A] px-2">
-                <span>مدیریت سرویس‌ها</span>
-                <ArrowLeft className="w-4 h-4" />
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full justify-between text-[#39C99A] px-2"
+                leftIcon={<ArrowLeft className="w-4 h-4 shrink-0" />}
+              >
+                مدیریت سرویس‌ها
               </Button>
             </Link>
           </div>

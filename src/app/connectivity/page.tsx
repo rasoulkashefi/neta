@@ -68,10 +68,14 @@ export default function ConnectivityHubPage() {
                 </div>
               </div>
               <div className="pt-4 border-t border-[#26364D]/60 flex items-center gap-3">
-                <Link href="/dns" className="flex-1">
-                  <Button variant="primary" size="sm" className="w-full justify-between">
-                    <span>تنظیمات و جزییات DNS</span>
-                    <ArrowLeft className="w-4 h-4" />
+                <Link href="/dns" className="flex-1 min-w-0">
+                  <Button
+                    variant="primary"
+                    size="sm"
+                    className="w-full justify-between"
+                    leftIcon={<ArrowLeft className="w-4 h-4 shrink-0" />}
+                  >
+                    تنظیمات و جزییات DNS
                   </Button>
                 </Link>
                 <Link href="/help/getting-started-dns">
@@ -107,10 +111,14 @@ export default function ConnectivityHubPage() {
                 </div>
               </div>
               <div className="pt-4 border-t border-[#26364D]/60 flex items-center gap-3">
-                <Link href="/gaming" className="flex-1">
-                  <Button variant="primary" size="sm" className="w-full justify-between">
-                    <span>مشاهده سرورهای بازی</span>
-                    <ArrowLeft className="w-4 h-4" />
+                <Link href="/gaming" className="flex-1 min-w-0">
+                  <Button
+                    variant="primary"
+                    size="sm"
+                    className="w-full justify-between"
+                    leftIcon={<ArrowLeft className="w-4 h-4 shrink-0" />}
+                  >
+                    مشاهده سرورهای بازی
                   </Button>
                 </Link>
                 <Link href="/test">
@@ -146,10 +154,14 @@ export default function ConnectivityHubPage() {
                 </div>
               </div>
               <div className="pt-4 border-t border-[#26364D]/60 flex items-center gap-3">
-                <Link href="/services" className="flex-1">
-                  <Button variant="primary" size="sm" className="w-full justify-between">
-                    <span>کاتالوگ سرویس‌های فعال</span>
-                    <ArrowLeft className="w-4 h-4" />
+                <Link href="/services" className="flex-1 min-w-0">
+                  <Button
+                    variant="primary"
+                    size="sm"
+                    className="w-full justify-between"
+                    leftIcon={<ArrowLeft className="w-4 h-4 shrink-0" />}
+                  >
+                    کاتالوگ سرویس‌های فعال
                   </Button>
                 </Link>
                 <Link href="/app/access">

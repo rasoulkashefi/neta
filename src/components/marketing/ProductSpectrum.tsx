@@ -67,15 +67,19 @@ export function ProductSpectrum() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#26364D]/60 flex items-center gap-3">
-              <Link href="/connectivity" className="flex-1">
-                <Button variant="primary" size="sm" className="w-full justify-between">
-                  <span>مشاهده سرویس‌های اتصال</span>
-                  <ArrowLeft className="w-4 h-4" />
+            <div className="pt-6 border-t border-[#26364D]/60 flex items-center gap-2">
+              <Link href="/connectivity" className="flex-1 min-w-0">
+                <Button
+                  variant="primary"
+                  size="sm"
+                  className="w-full justify-between"
+                  leftIcon={<ArrowLeft className="w-4 h-4 shrink-0" />}
+                >
+                  مشاهده سرویس‌های اتصال
                 </Button>
               </Link>
-              <Link href="/test">
-                <Button variant="ghost" size="sm">
+              <Link href="/test" className="shrink-0">
+                <Button variant="ghost" size="sm" className="px-2.5">
                   تست اتصال
                 </Button>
               </Link>
@@ -124,15 +128,19 @@ export function ProductSpectrum() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#26364D]/60 flex items-center gap-3">
-              <Link href="/ai" className="flex-1">
-                <Button variant="secondary" size="sm" className="w-full justify-between">
-                  <span>درگاه AI و مستندات</span>
-                  <ArrowLeft className="w-4 h-4" />
+            <div className="pt-6 border-t border-[#26364D]/60 flex items-center gap-2">
+              <Link href="/ai" className="flex-1 min-w-0">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  className="w-full justify-between"
+                  leftIcon={<ArrowLeft className="w-4 h-4 shrink-0" />}
+                >
+                  درگاه AI و مستندات
                 </Button>
               </Link>
-              <Link href="/ai#models">
-                <Button variant="ghost" size="sm">
+              <Link href="/ai#models" className="shrink-0">
+                <Button variant="ghost" size="sm" className="px-2.5">
                   مدل‌ها
                 </Button>
               </Link>
@@ -175,15 +183,19 @@ export function ProductSpectrum() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#26364D]/60 flex items-center gap-3">
-              <Link href="/cloud" className="flex-1">
-                <Button variant="outline" size="sm" className="w-full justify-between">
-                  <span>بررسی نقشه راه و همکاران</span>
-                  <ArrowLeft className="w-4 h-4" />
+            <div className="pt-6 border-t border-[#26364D]/60 flex items-center gap-2">
+              <Link href="/cloud" className="flex-1 min-w-0">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full justify-between"
+                  leftIcon={<ArrowLeft className="w-4 h-4 shrink-0" />}
+                >
+                  بررسی نقشه راه و همکاران
                 </Button>
               </Link>
-              <Link href="/cloud#marketplace">
-                <Button variant="ghost" size="sm">
+              <Link href="/cloud#marketplace" className="shrink-0">
+                <Button variant="ghost" size="sm" className="px-2.5">
                   همکاری
                 </Button>
               </Link>
